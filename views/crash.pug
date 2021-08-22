@@ -19,16 +19,16 @@ block content
         .col-md-8
           input.form-control(type='email', name='email', id='email', autocomplete='email', required)
     .form-group.row
-      label(class='col-md-2 col-form-label font-weight-bold', for='message') Are you at fault
+      label(class='col-md-2 col-form-label font-weight-bold', for='fault') Are you at fault
       
       .col
-        input.form-control(type='radio', name='message', id='message') 
+        input.form-control(type='radio', name='fault', id='fault_yes') 
         label() Yes
       .col
-        input.form-control(type='radio', name='message', id='message') 
+        input.form-control(type='radio', name='fault', id='fault_no') 
         label() No
       .col
-        input.form-control(type='radio', name='message', id='message') 
+        input.form-control(type='radio', name='fault', id='fault_maybe') 
         label() Unsure
       
     .form-group.row
@@ -36,14 +36,12 @@ block content
       .col-md-8
         textarea.form-control(name='message', id='message', rows='7', autofocus=(!unknownUser).toString(), required)
 
-    .row
+    
+    .form-group.row
+      label.col-form-label.font-weight-bold Crash Image File Input
       .col-md-6
-        form(role='form', enctype='multipart/form-data', method='POST')
-          input(type='hidden', name='_csrf', value=_csrf)
-          .form-group
-            label.col-form-label.font-weight-bold Crash Image File Input
-            .col-md-6
-              input(type='file', name='myFile')
+        input(type='file', name='myFile')
+        
     .form-group
         br
         button.btn.btn-primary(type='submit')
